@@ -1,0 +1,238 @@
+/* movie_maniac.css */
+
+* {
+	box-sizing: border-box;
+	font-family: georgia;
+}
+
+p {
+	font-family: georgia, "times new roman", times, serif;
+	font-size: 1rem;
+}
+
+form p {
+	min-width: 50%;
+	max-width: 50%;
+	float: left;
+}
+ul {
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+}
+
+table {
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.download-link {
+	font-family: verdana, sans-serif;
+}
+
+.search-container p {
+	min-width: 100%;
+	font-family: verdana, sans-serif;
+}
+
+.system-prompt {
+	font-family: verdana, sans-serif;
+	text-align: center;
+}
+
+.coverframe h1 {
+	font-size: 1rem;
+	font-family: verdana, sans-serif;
+	text-align: center;
+}
+
+#mysite {
+	max-width: 70rem;
+	margin: auto;
+	flex-wrap: wrap;
+}
+
+#banner {
+	flex: 1;
+	min-width: 100%;
+	height: 8rem;
+
+	background-color: #555555;
+	color: #ffffff;
+}
+#banner a {
+	color: #ffffff;
+}
+#banner h1 {
+	font-family: verdana;
+	font-weight: 100;
+	font-size: 2.5rem;
+
+	margin: 0;
+	padding: 2rem 2rem 2rem 4rem;
+	text-shadow: 0.2rem 0.2rem #999999;
+}
+
+#banner ul {
+	float: right;
+}
+#banner li {
+	display: inline-block;
+	margin: 0.5rem;
+}
+
+#container {
+	display: flex;
+	min-width: 100%;
+	flex-wrap: wrap;
+}
+
+#globalnav {
+	border-bottom: 0.15rem solid #777777;
+}
+#navigation-bar {
+	flex: 1;
+	min-width: 100%;
+	float: left;
+
+	background-color: #999999;
+	margin-bottom: 1rem;
+}
+
+#navigation-bar ul {
+	display: inline;
+	color: #ffffff;
+	font-size: 1rem;
+}
+#navigation-bar ul li {
+	display: inline-block;
+	position: relative;
+	padding: 0.6rem;
+}
+#navigation-bar ul a {
+	color: #ffffff;
+	text-decoration: none;
+}
+#navigation-bar ul li ul {
+	visibility: hidden;
+	display: none;
+	background: #888888;
+	position: absolute;
+	margin-top: 0.6rem;
+	min-width: 180px;
+}
+#navigation-bar ul li:hover ul {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+}
+#navigation-bar ul li ul li {
+	display: block;
+}
+
+#main {
+	flex: 1;
+	min-width: 100%;
+	float: left;
+	padding: 1rem;
+	min-height: 50rem;
+}
+#main img {
+	float: left;
+}
+
+#properties {
+	width: 100%;
+	margin: auto;
+	min-height: 500px;
+	margin-bottom: 2rem;
+}
+#properties img {
+	margin-right: 1rem;
+}
+#properties #info {
+	padding: 0.8rem;
+}
+#properties .property {
+	display: inline-block;
+	min-width: 20%;
+	font-weight: 800;
+}
+#properties h1 {
+	font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+	margin: 0;
+}
+#properties h2 {
+	font-size: 0.8rem;
+	font-weight: 100;
+	margin-bottom: 3rem;
+}
+#properties p {
+	margin-bottom: 0.5rem;
+}
+
+#trailer, #stream {
+	margin-bottom: 1rem;
+	text-align: center;
+}
+#stream {
+
+}
+#download-links {
+	width: 100%;
+	margin: auto;
+}
+#extras {
+	display: none;
+	visibility: hidden;
+
+	background-color: #F3F3F3;
+	border-left: 0.1rem solid #777777;
+	border-right: 0.1rem solid #777777;
+	flex: 1;
+	min-width: 100%;
+	float: left;
+	order: 2;
+}
+#extras h1 {
+	font-family: nyt-cheltenham, georgia, "times new roman", times, serif;
+	margin: 0;
+	padding: 1rem;
+	border-bottom: 0.15rem solid #777777;
+}
+#extras .coverframe {
+	max-width: 90%;
+	margin: auto;
+	margin-bottom: 2rem;
+}
+#extras img {
+	max-width: 100%;
+}
+
+#footer {
+	background-color: #F3F3F3;
+	border-top: 0.2rem solid #777777;
+	margin-top: 1rem;
+	order: 3;
+	min-width: 100%;
+	float: left;
+	padding: 0.5rem;
+	text-align: center;
+}
+
+@media all and (min-width: 62rem) {
+	#main {
+		min-width: 75%;
+		max-width: 75%;
+	}
+	#extras {
+		display: block;
+		visibility: visible;
+
+		min-width: 25%;
+		max-width: 25%;
+	}
+	#banner h1 {
+		font-size: 3.5rem;
+	}
+}
