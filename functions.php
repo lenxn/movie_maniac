@@ -85,7 +85,8 @@ function draw_results( $result, $count )
 		$ref = "src/movies/" . $row['folder'] . "/" . $row['src_file'];
 		$size = adjust_size( $row['size'] );
 		$link_sub = check_sub( $row['subtitle'], $row['folder'], $row['src_subtitle'] );
-		$element = "<a class='titles' href='detail.php?selection=" . $row['ID'] . "'><div class='coverframe'><h1>" . $title . "</h1><img src='cover.jpg'/></div></a>";
+		$cover = 	"src/movies/" . $row['folder'] . "/" . $row['src_cover'];
+		$element = "<a class='titles' href='detail.php?selection=" . $row['ID'] . "'><div class='coverframe'><h1>" . $title . "</h1><img src='" . $cover ."'/></div></a>";
 		echo $element;
 	}
 }

@@ -38,7 +38,7 @@ else
 
 ?>
 <div id='properties'>
-		<img class='image' src='cover.jpg' alt='poster_large.jpg'>
+		<img class='image' src='<?php echo $cover; ?>' alt='No image for this movie.'>
 		<div id='info'>
 			<h1><?php echo $title . " - (" . $release_date; ?> )</h1>
 				<h2><?php if( $duration != 0 )

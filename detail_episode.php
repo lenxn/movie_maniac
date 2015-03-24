@@ -25,7 +25,7 @@ else
 
 ?>
 <div id='properties'>
-		<img class='image' src='cover.jpg' alt='poster_large.jpg'>
+		<!-- <img class='image' src='cover.jpg' alt='poster_large.jpg'> -->
 		<div id='info'>
 		<?php
 			echo "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
