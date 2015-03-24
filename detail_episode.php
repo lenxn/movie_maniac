@@ -14,7 +14,7 @@ $row = $result->fetch_array( MYSQLI_ASSOC );
 $title = $row['title'];
 $release_date =	$row['release_date'];
 
-$ref = 		''; // "src/movies/" . $row['folder'] . "/" . $row['src_file']; 
+$ref = 		"src/series/" . $row['folder'] . "/" . $row['src_file'];
 
 echo "<head><title>" . $title . "</title></head>";
 if( $row['subtitle'] == 0 )
@@ -34,7 +34,7 @@ else
 		</div>
 </div>
 
-<?php if( $row['format'] == 'mp4' )
+<?php /* if( $row['format'] == 'mp4' )
 echo <<<_END
 <div id='stream'>
 	<h2>Watch Stream</h2>
@@ -43,7 +43,7 @@ echo <<<_END
 		Your browser does not support mp4.
 	</video>
 </div>
-_END;
+_END; */
 ?>
 
 <div id='download-links'>

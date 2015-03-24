@@ -48,7 +48,11 @@ function draw_table_series( $result, $count )
 	{
 		$result->data_seek( $i );
 		$row = $result->fetch_array( MYSQLI_ASSOC );
-		$title = $row['title'] . "<span id='title_info'> [Season " . $row['season'] . "] (" . $row['release_date'] . ")</span>";
+		if( $row['season'] != 0 )
+			$title = $row['title'] . "<span id='title_info'> [Season " . $row['season'] . "] (" . $row['release_date'] . ")</span>";
+		else
+			$title = $row['title'];
+		
 		$row =	"<tr><td = class='column_title'><a class='titles' href='episodes.php?selection=" . $row['ID'] . "'>" . $title . "</a></td>";
 		echo $row;
 	}
