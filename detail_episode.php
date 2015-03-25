@@ -14,7 +14,11 @@ $row = $result->fetch_array( MYSQLI_ASSOC );
 $title = $row['title'];
 $release_date =	$row['release_date'];
 
-$ref = 		"src/series/" . $row['folder'] . "/" . $row['src_file'];
+if( $row['season'] != 0 )
+	$ref = "src/series/" . $row['folder'] . "/S" . $row['season'] . "E" . $row['episode'] . "." . $row['format'];
+else
+	$ref = "src/series/" . $row['folder'] . "/" . $row['src_file'] . "." . $row['format'];
+
 
 echo "<head><title>" . $title . "</title></head>";
 if( $row['subtitle'] == 0 )
@@ -28,8 +32,12 @@ else
 		<!-- <img class='image' src='cover.jpg' alt='poster_large.jpg'> -->
 		<div id='info'>
 		<?php
-			echo "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
-			echo "<h2>Episode " . $row['episode'] . " - " . $row['episode_title'] . "</h2>";
+			if( ( $row['season'] && $row['episode'] ) != 0 )
+				echo "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
+				echo "<h2>Episode " . $row['episode'] . " - " . $row['episode_title'] . "</h2>";
+			else
+				echo "<h1>" . $title . "</h1>";
+				echo "<h2>" . $row['episode_title'] . " - " . $row['release_date'];
 		?>
 		</div>
 </div>
