@@ -70,8 +70,19 @@ function draw_table_episodes( $result, $count )
 		$result->data_seek( $i );
 		$row = $result->fetch_array( MYSQLI_ASSOC );
 
-		if( $row['season'] != 0 )
-			$ref = "src/series/" . $row['folder'] . "/S" . $row['season'] . "E" . $row['episode'] . "." . $row['format'];
+		if( $row['season'] != 0 ) {
+			if( $row['season'] < 10 )
+				$season = "0" . $row['season'];
+			else
+				$season = $row['season'];
+
+			if( $row['episode'] < 10 )
+				$episode = "0" . $row['episode'];
+			else
+				$episode = $row['episode'];
+
+			$ref = "src/series/" . $row['folder'] . "/S" . $season . "E" . $episode . "." . $row['format'];
+		}
 		else
 			$ref = "src/series/" . $row['folder'] . "/" . $row['src_file'] . "." . $row['format'];
 
