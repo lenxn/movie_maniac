@@ -46,15 +46,15 @@ if( !$result ) die( "Query failed" );
 				<li class='menu_button'><a href='index.php'>Home</a></li>
 				<li class='menu_button'><a href='#'>Movies</a>
 					<ul class='submenu'>
-						<li><a href='movie_search.php'>Search Wizard</a></li>
-						<li><a href='newest_movies.php'>Newest</a></li>
+						<li><a href='movie_search.php'>Search</a></li>
+						<li><a href='newest_movies.php'>Latest</a></li>
 						<!-- <li><a href='top_rated_movies.php'>Top Rated</a></li>-->
 						<!-- <li><a href='request_movie.php'>Request</a></li>-->
 					</ul>
 				</li>		
 				<li class='menu_button'><a href='#'>Series</a>
 					<ul class='submenu'>
-						<li><a href='serie_search.php'>Search Wizard</a></li>
+						<!-- <li><a href='serie_search.php'>Search Wizard</a></li> -->
 						<li><a href='top_rated_series.php'>Show All</a></li>
 					</ul>
 				</li>
