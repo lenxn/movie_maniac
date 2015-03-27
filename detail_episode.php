@@ -32,12 +32,14 @@ else
 		<!-- <img class='image' src='cover.jpg' alt='poster_large.jpg'> -->
 		<div id='info'>
 		<?php
-			if( ( $row['season'] && $row['episode'] ) != 0 )
+			if( ( $row['season'] && $row['episode'] ) != 0 ) {
 				echo "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
 				echo "<h2>Episode " . $row['episode'] . " - " . $row['episode_title'] . "</h2>";
-			else
+			}
+			else {
 				echo "<h1>" . $title . "</h1>";
 				echo "<h2>" . $row['episode_title'] . " - " . $row['release_date'];
+			}
 		?>
 		</div>
 </div>

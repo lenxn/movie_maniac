@@ -52,7 +52,7 @@ function draw_table_series( $result, $count )
 			$title = $row['title'] . "<span id='title_info'> [Season " . $row['season'] . "] (" . $row['release_date'] . ")</span>";
 		else
 			$title = $row['title'];
-		
+
 		$row =	"<tr><td = class='column_title'><a class='titles' href='episodes.php?selection=" . $row['ID'] . "'>" . $title . "</a></td>";
 		echo $row;
 	}
@@ -69,7 +69,13 @@ function draw_table_episodes( $result, $count )
 	{
 		$result->data_seek( $i );
 		$row = $result->fetch_array( MYSQLI_ASSOC );
-		$row =	"<tr><td = class='column_title'><a class='titles' href='detail_episode.php?selection=" . $row['ID'] . "'>" . $row['episode'] . " - " . $row['episode_title'] . "</a></td>";
+
+		if( $row['season'] != 0 )
+			$ref = "src/series/" . $row['folder'] . "/S" . $row['season'] . "E" . $row['episode'] . "." . $row['format'];
+		else
+			$ref = "src/series/" . $row['folder'] . "/" . $row['src_file'] . "." . $row['format'];
+
+		$row =	"<tr><td = class='column_title'>Episode [" . $row['episode'] . "] - <a class='titles' href='" . $ref . "'>" . $row['episode_title'] . "</a></td>";
 		echo $row;
 	}
 	echo "</table>";

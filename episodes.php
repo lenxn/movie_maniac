@@ -10,7 +10,31 @@ $query = "SELECT * FROM series LEFT JOIN episodes on series.ID=episodes.serie_ID
 $result = $connection->query( $query );
 $row = $result->fetch_array( MYSQLI_ASSOC );
 
-echo "<h1>" . $row['title'] . " - Season " . $row['season'] . "</h1>";
+$title = $row['title'];
+$release_date =	$row['release_date'];
+$cover = "src/series/" . $row['folder'] . "/" . $row['folder'] . "_" . $row['episode'] . ".jpg";
 
+echo "<head><title>" . $title . "</title></head>";
+if( $row['subtitle'] == 0 )
+	$subtitle = '';
+else
+	$subtitle = ' - with Subtitle';
+?>
+
+<div id='properties'>
+		<img class='image' src='<?php echo $cover; ?>' alt='No cover for this movie.'>
+		<div id='info'>
+		<?php
+			if( ( $row['season'] && $row['episode'] ) != 0 ) {
+				echo "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
+			}
+			else {
+				echo "<h1>" . $title . "</h1>";
+			}
+		?>
+		</div>
+</div>
+
+<?php
 draw_table_episodes( $result, $result->num_rows );
 ?>
