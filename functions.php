@@ -87,14 +87,14 @@ function draw_table_episodes( $result, $count )
 			$ref = "src/series/" . $row['folder'] . "/" . $row['src_file'] . "." . $row['format'];
 		}
 
-		
+
 		// add column with sub download if subs exist
 		$sub_src = "";
 		if( $row['subtitle'] && $row['hard_subs'] != 0 )
 			$ref = "src/series/" . $row['folder'] . "/S" . $season . "E" . $episode . ".sub";
 
 
-		$row =	"<tr><td = class='column_title'>Episode [" . $row['episode'] . "] - <a class='titles' href='" . $ref . "'>" . $row['episode_title'] . "</a></td>";
+		$row =	"<tr><td = class='column_title'>Episode [" . $row['episode'] . "] - <a class='titles' href='" . $ref . "'download>" . $row['episode_title'] . "</a></td><td>" . $sub_src . "</td>";
 		echo $row;
 	}
 	echo "</table>";

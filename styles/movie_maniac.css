@@ -150,6 +150,8 @@ table {
 #properties img {
 	margin-right: 1rem;
 	margin-bottom: 2rem;
+	max-width: 40%;
+	min-width: 40%;
 }
 #properties #info {
 	padding: 0.8rem;
