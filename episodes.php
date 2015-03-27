@@ -19,22 +19,26 @@ if( $row['subtitle'] == 0 )
 	$subtitle = '';
 else
 	$subtitle = ' - with Subtitle';
+
+
+if( ( $row['season'] && $row['episode'] ) != 0 ) {		
+	$header = "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
+	$cover = "src/series/" . $row['folder'] . "/" . $row['folder'] . "_" . $row['episode'] . ".jpg";
+}
+else {
+	$header = "<h1>" . $title . "</h1>";
+	$cover = "src/series/" . $row['folder'] . "/" . $row['folder'] . ".jpg";
+}
 ?>
 
+<!-- HTML outpu -->
 <div id='properties'>
 		<img class='image' src='<?php echo $cover; ?>' alt='No cover for this movie.'>
 		<div id='info'>
-		<?php
-			if( ( $row['season'] && $row['episode'] ) != 0 ) {
-				echo "<h1>" . $title . " - Season " . $row['season'] . " (" . $row['release_date'] . ")</h1>";
-			}
-			else {
-				echo "<h1>" . $title . "</h1>";
-			}
-		?>
+			<?php echo $header ?>
 		</div>
 </div>
 
 <?php
-draw_table_episodes( $result, $result->num_rows );
+	draw_table_episodes( $result, $result->num_rows );
 ?>
